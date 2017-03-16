@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <constant>
+        <name>EmployeePositions</name>
+        <uuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3081</uuid>
+        <description></description>
+        <parentUuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3080</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <typedValue>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+            <value>
+                <el>Electrical Engineer</el>
+                <el>Software Engineer</el>
+                <el>CEO</el>
+                <el>Human Resource Manager</el>
+                <el>IT Help Desk</el>
+                <el>Project Manager</el>
+            </value>
+        </typedValue>
+        <isEnvironmentSpecific>false</isEnvironmentSpecific>
+    </constant>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>ken.omekam</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

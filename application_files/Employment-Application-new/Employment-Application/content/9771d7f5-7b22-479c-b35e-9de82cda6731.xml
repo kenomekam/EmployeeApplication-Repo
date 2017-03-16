@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>EmployeeElectricalEngineers</name>
+        <uuid>9771d7f5-7b22-479c-b35e-9de82cda6731</uuid>
+        <description></description>
+        <parentUuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3063</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(&#xD;
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(&#xD;
+    startIndex: 1,&#xD;
+    batchSize: 20,&#xD;
+    sort: #"SYSTEM_SYSRULES_sortInfo"(&#xD;
+      field: "EmployeeId",&#xD;
+      ascending: true&#xD;
+    )&#xD;
+  ),&#xD;
+  with(&#xD;
+    local!datasubset: queryrecord(&#xD;
+      #"_a-0000de71-1540-8000-3120-01ef9001ef90_3097",&#xD;
+      #"SYSTEM_SYSRULES_query"(&#xD;
+        selection: #"SYSTEM_SYSRULES_querySelection"(columns: {&#xD;
+          #"SYSTEM_SYSRULES_queryColumn"(field: "EmployeeId"),&#xD;
+          #"SYSTEM_SYSRULES_queryColumn"(field: "LastName"),&#xD;
+          #"SYSTEM_SYSRULES_queryColumn"(field: "FirstName"),&#xD;
+          #"SYSTEM_SYSRULES_queryColumn"(field: "PhoneNumber"),&#xD;
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Position"),&#xD;
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Salary"),&#xD;
+        }),&#xD;
+        filter:#"SYSTEM_SYSRULES_queryFilter"(&#xD;
+      field: "Position",&#xD;
+      operator: "=",&#xD;
+      value: "Electrical Engineer"&#xD;
+    ),&#xD;
+        pagingInfo: local!pagingInfo&#xD;
+      )&#xD;
+    ),&#xD;
+    &#xD;
+    &#xD;
+    #"SYSTEM_SYSRULES_gridField"(&#xD;
+      label: "This shows the list of all Electrical Engineers.",&#xD;
+      totalCount: local!datasubset.totalCount,&#xD;
+      columns: {&#xD;
+        #"SYSTEM_SYSRULES_gridTextColumn"(&#xD;
+          label: "EmployeeId",&#xD;
+          field: "EmployeeId",&#xD;
+          data: index(local!datasubset.data, "EmployeeId", null),&#xD;
+          links: apply(&#xD;
+            #"SYSTEM_SYSRULES_recordLink"(&#xD;
+              label: "Go to record view",&#xD;
+              recordType: #"_a-0000de71-1540-8000-3120-01ef9001ef90_3097",&#xD;
+              identifier: _,&#xD;
+              dashboard: "summary"&#xD;
+            ),&#xD;
+            local!datasubset.identifiers&#xD;
+          )&#xD;
+        ),&#xD;
+        #"SYSTEM_SYSRULES_gridTextColumn"(&#xD;
+          label: "LastName",&#xD;
+          field: "LastName",&#xD;
+          data: index(local!datasubset.data, "LastName", null)&#xD;
+        ),&#xD;
+        #"SYSTEM_SYSRULES_gridTextColumn"(&#xD;
+          label: "FirstName",&#xD;
+          field: "FirstName",&#xD;
+          data: index(local!datasubset.data, "FirstName", null)&#xD;
+        ),&#xD;
+        #"SYSTEM_SYSRULES_gridTextColumn"(&#xD;
+          label: "PhoneNumber",&#xD;
+          field: "PhoneNumber",&#xD;
+          data: index(local!datasubset.data, "PhoneNumber", null)&#xD;
+        ),&#xD;
+        #"SYSTEM_SYSRULES_gridTextColumn"(&#xD;
+          label: "Position",&#xD;
+          field: "Position",&#xD;
+          data: index(local!datasubset.data, "Position", null)&#xD;
+        ),&#xD;
+        #"SYSTEM_SYSRULES_gridTextColumn"(&#xD;
+          label: "Salary",&#xD;
+          field: "Salary",&#xD;
+          data: index(local!datasubset.data, "Salary", null)&#xD;
+        )&#xD;
+      },&#xD;
+      value: local!pagingInfo,&#xD;
+      saveInto: local!pagingInfo&#xD;
+    )&#xD;
+  )&#xD;
+)&#xD;
+</definition>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>ken.omekam</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

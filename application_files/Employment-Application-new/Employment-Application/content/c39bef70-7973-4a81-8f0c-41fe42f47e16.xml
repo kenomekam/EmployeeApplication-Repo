@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>EmployeeApplicationForm</name>
+        <uuid>c39bef70-7973-4a81-8f0c-41fe42f47e16</uuid>
+        <description>This is a form for applying</description>
+        <parentUuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3063</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#"SYSTEM_SYSRULES_formLayout"(
+  label: "Employment Application Form",
+ 
+  firstColumnContents: {
+    #"SYSTEM_SYSRULES_sectionLayout"(
+    
+      firstColumnContents: {
+        #"SYSTEM_SYSRULES_integerField"(
+          label: "Employee Id",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.EmployeeId,
+          saveInto:ri!employeeinformation.EmployeeId
+          
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Last Name",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.LastName,
+          saveInto:ri!employeeinformation.LastName
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"First Name",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.FirstName,
+          saveInto:ri!employeeinformation.FirstName
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Middle Name",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.MiddleName,
+          saveInto:ri!employeeinformation.MiddleName
+        ),
+         #"SYSTEM_SYSRULES_textField"(
+          label:"Phone Number",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.PhoneNumber,
+          saveInto:ri!employeeinformation.PhoneNumber
+        ),
+        #"SYSTEM_SYSRULES_dropdownField"(
+          label: " Position",
+          placeholderLabel:"Select Position",
+          choiceLabels:#"_a-0000de71-1540-8000-3120-01ef9001ef90_3081",
+          choiceValues:#"_a-0000de71-1540-8000-3120-01ef9001ef90_3081",
+          value: ri!employeeinformation.Position,
+          saveInto:ri!employeeinformation.Position
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Salary",
+          labelPosition: "ABOVE",
+          value: dollar(ri!employeeinformation.Salary),
+          saveInto:ri!employeeinformation.Salary
+        )
+      },
+      secondColumnContents: {
+       
+         #"SYSTEM_SYSRULES_textField"(
+          label:"Email Address",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.EmailAddress,
+          saveInto:ri!employeeinformation.EmailAddress
+        ),
+         #"SYSTEM_SYSRULES_textField"(
+          label:"Address",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.Address,
+          saveInto:ri!employeeinformation.Address
+        ),
+         #"SYSTEM_SYSRULES_textField"(
+          label:"City",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.City,
+          saveInto:ri!employeeinformation.City
+        ),
+        #"SYSTEM_SYSRULES_dropdownField"(
+          label: " State",
+          placeholderLabel:"Select State",
+          choiceLabels:#"_a-0000de71-1540-8000-3120-01ef9001ef90_3070",
+          choiceValues:#"_a-0000de71-1540-8000-3120-01ef9001ef90_3070",
+          value: ri!employeeinformation.StateLived,
+          saveInto:ri!employeeinformation.StateLived
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Zipcode",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.ZipCode,
+          saveInto:ri!employeeinformation.ZipCode
+        ),
+        #"SYSTEM_SYSRULES_paragraphField"(
+          label: "Why Should I hire you?",
+          value: ri!reason,
+          saveInto:ri!reason
+        )
+        
+      }
+    ),
+    
+  },
+  secondColumnContents: {},
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label: "Submit",
+        style: "PRIMARY",
+        value:ri!submit,
+        saveInto:ri!submit
+      )
+    },
+    secondaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label: "Cancel",
+        style: "NORMAL",
+        value:"true",
+        saveInto: ri!cancel,
+        skipValidation: true
+      )
+    }
+  ),
+  validations: {}
+)</definition>
+        <namedTypedValue>
+            <name>employeeinformation</name>
+            <type>
+                <name>employeeinformation</name>
+                <namespace>http://dl24-hp5gxz1.amer.reisystems.com:8080/suite/types/</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>submit</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>reason</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>ken.omekam</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <dataStore>
+        <uuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3059</uuid>
+        <name>employeedatastore</name>
+        <description></description>
+        <dataSourceKey>jdbc/appianDS</dataSourceKey>
+        <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
+        <autoUpdateSchema>false</autoUpdateSchema>
+        <entities>
+            <entity>
+                <uuid>806599ca-90ff-4c9c-b44e-bd57dd2589f9</uuid>
+                <name>employeeinformation</name>
+                <type>{http://dl24-hp5gxz1.amer.reisystems.com:8080/suite/types/}employeeinformation</type>
+            </entity>
+        </entities>
+    </dataStore>
+    <isPublished>true</isPublished>
+    <roleMap>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>ken.omekam</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</dataStoreHaul>

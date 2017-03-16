@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <recordType a:uuid="f5b28a95-ded6-4c7c-ab0a-86c81730a124" name="Employee Record">
+        <a:pluralName>Employee Record</a:pluralName>
+        <a:description>List of all active employees.</a:description>
+        <a:urlStub>I2i4kA</a:urlStub>
+        <a:source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:DataStoreEntity" a:uuid="806599ca-90ff-4c9c-b44e-bd57dd2589f9@_a-0000de71-1540-8000-3120-01ef9001ef90_3059"/>
+        <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridLayoutColumns"(
+  columns: {
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Name",
+      field: "FirstName",
+      component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: #"SYSTEM_SYSRULES_recordLink"(   
+          label: rf!LastName &amp; " " &amp; rf!FirstName,
+          recordType: rp!type,
+          identifier: rp!id
+        )
+      ),
+      visible: true
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Adress",
+      width: "DISTRIBUTE",
+      field: "StateLived",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: rf!Address &amp; " " &amp; rf!City &amp; " " &amp; rf!StateLived &amp; " " &amp; rf!ZipCode
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Position",
+      width: "DISTRIBUTE",
+      field: "Position",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: rf!Position
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Salary",
+      width: "DISTRIBUTE",
+      field: "Salary",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: rf!Salary
+      )
+    )  
+  },
+  pageSize: 50,
+  defaultSort: #"SYSTEM_SYSRULES_sortInfo"(
+    field: "LastName",
+    ascending: fn!true()
+  )
+)</a:listViewTemplateExpr>
+        <a:fieldCfg name="Position">
+            <a:description></a:description>
+            <a:sourceRef>Position</a:sourceRef>
+            <a:isSortable>false</a:isSortable>
+            <a:isSearchable>false</a:isSearchable>
+            <a:isFacet>true</a:isFacet>
+            <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+            <a:isExclusiveFacet>true</a:isExclusiveFacet>
+            <a:facetLabelExpr>"Position"</a:facetLabelExpr>
+            <a:facetOption>
+                <a:labelExpr>"Software Engineer"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"Software Engineer"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"Electrical Engineer"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"Electrical Engineer"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"CEO"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"CEO"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"Human Resource Manager"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"Human Resource Manager"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"IT Help Desk"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"IT Help Desk"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"Project Manager"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"Project Manager"</a:values>
+            </a:facetOption>
+            <a:sortOrderIndex>0</a:sortOrderIndex>
+            <a:facetOrderIndex>0</a:facetOrderIndex>
+            <a:visibilityExpr></a:visibilityExpr>
+            <a:defaultOptionExpr></a:defaultOptionExpr>
+        </a:fieldCfg>
+        <a:fieldCfg name="City">
+            <a:description></a:description>
+            <a:sourceRef>City</a:sourceRef>
+            <a:isSortable>false</a:isSortable>
+            <a:isSearchable>false</a:isSearchable>
+            <a:isFacet>true</a:isFacet>
+            <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+            <a:isExclusiveFacet>true</a:isExclusiveFacet>
+            <a:facetLabelExpr>"City"</a:facetLabelExpr>
+            <a:facetOption>
+                <a:labelExpr>"Washington"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"Washington"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"Spring hill"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"Spring hill"</a:values>
+            </a:facetOption>
+            <a:sortOrderIndex>1</a:sortOrderIndex>
+            <a:facetOrderIndex>1</a:facetOrderIndex>
+            <a:visibilityExpr></a:visibilityExpr>
+            <a:defaultOptionExpr></a:defaultOptionExpr>
+        </a:fieldCfg>
+        <a:fieldCfg name="Stave Lived">
+            <a:description></a:description>
+            <a:sourceRef>StateLived</a:sourceRef>
+            <a:isSortable>false</a:isSortable>
+            <a:isSearchable>false</a:isSearchable>
+            <a:isFacet>true</a:isFacet>
+            <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+            <a:isExclusiveFacet>true</a:isExclusiveFacet>
+            <a:facetLabelExpr>"State Lived"</a:facetLabelExpr>
+            <a:facetOption>
+                <a:labelExpr>"DC"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"DC"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"VA"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr></a:lowerLimitExpr>
+                <a:upperLimitExpr></a:upperLimitExpr>
+                <a:values>"VA"</a:values>
+            </a:facetOption>
+            <a:sortOrderIndex>2</a:sortOrderIndex>
+            <a:facetOrderIndex>2</a:facetOrderIndex>
+            <a:visibilityExpr></a:visibilityExpr>
+            <a:defaultOptionExpr></a:defaultOptionExpr>
+        </a:fieldCfg>
+        <a:detailViewCfg>
+            <a:nameExpr>="Summary"</a:nameExpr>
+            <a:uiExpr>#"1c3c94dc-b9b1-4a66-9d6f-82fc94b702ce"()</a:uiExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:urlStub>summary</a:urlStub>
+            <a:headerExpr></a:headerExpr>
+            <a:relatedActionCfg>45798546-c42c-4c5a-ab5b-869ef5e1de4f</a:relatedActionCfg>
+            <a:relatedActionCfg>95f6beeb-8ac2-4dc3-b6a6-e7265850cde2</a:relatedActionCfg>
+        </a:detailViewCfg>
+        <a:relatedActionCfg>
+            <a:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:ProcessModel" a:uuid="0002de72-aa8d-8000-30e8-014d98014d98"/>
+            <a:contextExpr>{&#xD;
+  employeeId: rp!id &#xD;
+}</a:contextExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:iconId>f0e7</a:iconId>
+            <a:refId>45798546-c42c-4c5a-ab5b-869ef5e1de4f</a:refId>
+        </a:relatedActionCfg>
+        <a:relatedActionCfg>
+            <a:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:ProcessModel" a:uuid="0002de75-603e-8000-30e8-014d98014d98"/>
+            <a:contextExpr>{
+  employeeId: rp!id 
+}</a:contextExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:iconId>f0e7</a:iconId>
+            <a:refId>95f6beeb-8ac2-4dc3-b6a6-e7265850cde2</a:refId>
+        </a:relatedActionCfg>
+        <a:isSystem>false</a:isSystem>
+        <a:dataSrcExpr></a:dataSrcExpr>
+        <a:facetsListExpr></a:facetsListExpr>
+        <a:titleExpr>rf!LastName &amp; " " &amp; rf!FirstName</a:titleExpr>
+        <a:defaultFiltersExpr></a:defaultFiltersExpr>
+        <a:layoutType>GRID</a:layoutType>
+        <a:security>16383</a:security>
+    </recordType>
+    <roleMap/>
+</recordTypeHaul>

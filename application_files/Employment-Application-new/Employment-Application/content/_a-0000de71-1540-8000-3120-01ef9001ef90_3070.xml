@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <constant>
+        <name>EmployeeStateSelections</name>
+        <uuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3070</uuid>
+        <description></description>
+        <parentUuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3080</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <typedValue>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+            <value>
+                <el>AK</el>
+                <el>AZ</el>
+                <el>AR</el>
+                <el>CA</el>
+                <el>CO</el>
+                <el>CT</el>
+                <el>DE</el>
+                <el>DC</el>
+                <el>FL</el>
+                <el>GA</el>
+                <el>HI</el>
+                <el>ID</el>
+                <el>IL</el>
+                <el>IN</el>
+                <el>KS</el>
+                <el>KY</el>
+                <el>LA</el>
+                <el>ME</el>
+                <el>MD</el>
+                <el>MA</el>
+                <el>MI</el>
+                <el>MN</el>
+                <el>MS</el>
+                <el>MO</el>
+                <el>MT</el>
+                <el>NE</el>
+                <el>NV</el>
+                <el>NH</el>
+                <el>NJ</el>
+                <el>NM</el>
+                <el>NY</el>
+                <el>NC</el>
+                <el>ND</el>
+                <el>OH</el>
+                <el>OK</el>
+                <el>OR</el>
+                <el>PA</el>
+                <el>RI</el>
+                <el>SC</el>
+                <el>SD</el>
+                <el>TN</el>
+                <el>TS</el>
+                <el>UT</el>
+                <el>VT</el>
+                <el>VA</el>
+                <el>WA</el>
+                <el>WV</el>
+                <el>WI</el>
+                <el>WY</el>
+            </value>
+        </typedValue>
+        <isEnvironmentSpecific>false</isEnvironmentSpecific>
+    </constant>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>ken.omekam</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
