@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<administeredSettingHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <uuid>conf.userStartPages.START_PAGES</uuid>
+    <isDefault>false</isDefault>
+    <urlConfigs>
+        <urlConfig>
+            <url>/sites/site-only-for-electrical-engin/page/electrical-engineers</url>
+            <groups>
+                <group a:uuid="_e-0000de71-1540-8000-30e7-011e94011e94_10"/>
+            </groups>
+        </urlConfig>
+    </urlConfigs>
+</administeredSettingHaul>
