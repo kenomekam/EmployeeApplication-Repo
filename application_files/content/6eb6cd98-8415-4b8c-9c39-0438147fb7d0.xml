@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>EmployeeDeleteForm</name>
+        <uuid>6eb6cd98-8415-4b8c-9c39-0438147fb7d0</uuid>
+        <description></description>
+        <parentUuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3063</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#"SYSTEM_SYSRULES_formLayout"(
+  label: "Delete Your Employee Information",
+ 
+  firstColumnContents: {
+    #"SYSTEM_SYSRULES_sectionLayout"(
+    
+      firstColumnContents: {
+        #"SYSTEM_SYSRULES_integerField"(
+          label: "Employee Id",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.EmployeeId,
+          readOnly:true
+          
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Last Name",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.LastName,
+          readOnly:true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"First Name",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.FirstName,
+          readOnly:true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Middle Name",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.MiddleName,
+          readOnly:true
+        ),
+         #"SYSTEM_SYSRULES_textField"(
+          label:"Phone Number",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.PhoneNumber,
+          readOnly:true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: " Position",
+          placeholderLabel:"Select Position",
+         
+          value: ri!employeeinformation.Position,
+          readOnly:true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Salary",
+          labelPosition: "ABOVE",
+          value: dollar(ri!employeeinformation.Salary),
+          readOnly:true
+        )
+      },
+      secondColumnContents: {
+       
+         #"SYSTEM_SYSRULES_textField"(
+          label:"Email Address",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.EmailAddress,
+          readOnly:true
+        ),
+         #"SYSTEM_SYSRULES_textField"(
+          label:"Address",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.Address,
+          readOnly:true
+        ),
+         #"SYSTEM_SYSRULES_textField"(
+          label:"City",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.City,
+          readOnly:true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: " State",
+          placeholderLabel:"Select State",
+          value: ri!employeeinformation.StateLived,
+          readOnly:true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Zipcode",
+          labelPosition: "ABOVE",
+          value:ri!employeeinformation.ZipCode,
+          readOnly:true
+        ),
+        #"SYSTEM_SYSRULES_paragraphField"(
+          label: "Why Should I hire you?",
+          value: ri!reason,
+          readOnly:true
+        )
+        
+      }
+    ),
+    
+  },
+  secondColumnContents: {},
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label: "Delete",
+        style: "DESTRUCTIVE",
+        value:ri!submit,
+        saveInto:ri!submit,
+        confirmMessage: "Are you sure?"
+      )
+    },
+    secondaryButtons: {
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label: "Cancel",
+        style: "NORMAL",
+        value:"true",
+        saveInto: ri!cancel,
+        skipValidation: true
+      )
+    }
+  ),
+  validations: {}
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>submit</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>employeeinformation</name>
+            <type>
+                <name>employeeinformation</name>
+                <namespace>http://dl24-hp5gxz1.amer.reisystems.com:8080/suite/types/</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>reason</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>ken.omekam</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

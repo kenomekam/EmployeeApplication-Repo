@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>EmployeeReport</name>
+        <uuid>08e06e6c-e529-421e-82d0-41e146c4f7d1</uuid>
+        <description></description>
+        <parentUuid>_a-0000de71-1540-8000-3120-01ef9001ef90_3096</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
+    startIndex: 1,
+    batchSize: 20,
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "LastName",
+      ascending: true
+    )
+  ),
+  with(
+    local!datasubset: queryrecord(
+      #"_a-0000de71-1540-8000-3120-01ef9001ef90_3097",
+      #"SYSTEM_SYSRULES_query"(
+        selection: #"SYSTEM_SYSRULES_querySelection"(columns: {
+          #"SYSTEM_SYSRULES_queryColumn"(field: "LastName"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "FirstName"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Position"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Salary"),
+         
+        }),
+        filter:#"SYSTEM_SYSRULES_queryFilter"(
+      field: "Position",
+      operator: "=",
+      value: "Electrical Engineer"
+    ),
+        pagingInfo: local!pagingInfo
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridField"(
+      label: "Electrical engineers and their salary",
+      totalCount: local!datasubset.totalCount,
+      columns: {
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "LastName",
+          field: "LastName",
+          data: index(local!datasubset.data, "LastName", null) 
+        ),
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "FirstName",
+          field: "FirstName",
+          data: index(local!datasubset.data, "FirstName", null)
+        ),
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Position",
+          field: "Position",
+          data: index(local!datasubset.data, "Position", null)
+        ),
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Salary",
+          field: "Salary",
+          data: index(local!datasubset.data, "Salary", null)
+        ),
+        
+      },
+      value: local!pagingInfo,
+      saveInto: local!pagingInfo
+    )
+  )
+)
+</definition>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>true</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users>
+                <userUuid>ken.omekam</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport a:uuid="21cde6f7-46e3-47da-8b5f-deee7029b4a1" name="Employee Report">
+        <a:description>Report showing Employee Data</a:description>
+        <a:uiExpr>=#"08e06e6c-e529-421e-82d0-41e146c4f7d1"()</a:uiExpr>
+        <a:urlStub>SweJtw</a:urlStub>
+    </tempoReport>
+    <roleMap/>
+</tempoReportHaul>
